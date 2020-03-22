@@ -22,12 +22,12 @@
 
 // variables-font
 $font-stack: CiroSans Book, Arial, sans-serif;
-$text-size: 22px;
+$text-size: 25px;
 
 // variables-grid
-$line-height: 27px; //unit of measure_height
-$max-pagewidth: 1350px;
-$img-padding: 6px;
+$line-height: 30px; //unit of measure_height
+$max-pagewidth: 1600px;
+$img-padding: 70px;
 
 // variables-resize
 $mobile: 590px;
@@ -146,18 +146,26 @@ header {
 		display: inline-block;
 
 		a {
-			padding-left: 10px;
+			padding-left: 15px;
 		}
 	}
 }
 
 .nav-top {
-	text-align: justify; /* For Edge */
-	-moz-text-align-last: justify; /* For Firefox prior 58.0 */
-	text-align-last: justify;
 
 	a {
 		display: inline-block;
+		width: 50%;
+		float:left;
+	}
+	.nav-right {
+		width: 50%;
+		text-align: right;
+
+		a {
+			width: auto;
+			float: initial;
+		}
 	}
 }
 
@@ -176,8 +184,10 @@ header {
 .row {
 	margin: 0 -$img-padding !important;
 	margin-top: -$img-padding !important;
-	.col-xl-3.col-lg-4.col-md-6 {
+	.col-xl-4.col-md-6 {
 		padding: $img-padding;
+		display: flex;
+    	align-items: center; //vertical centering
 
 		.container-img {
 			position: relative;
