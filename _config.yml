@@ -1,6 +1,6 @@
 # Site Settings
-baseurl: "/tplview"
-url: "https://github.com/JuanJFeng"
+baseurl: ""
+url: " http://tplview.pictures"
 exclude: ['README.md']
 
 # Sass/SCSS
