@@ -22,12 +22,15 @@
 
 // variables-font
 $font-stack: CiroSans Book, Arial, sans-serif;
-$text-size: 25px;
+$text-size: 23px;
+$text-size-mobile: 18px;
 
 // variables-grid
-$line-height: 30px; //unit of measure_height
+$line-height: 26px; //unit of measure_height
+$line-height-mobile: 23px; //unit of measure_height
 $max-pagewidth: 1600px;
-$img-padding: 70px;
+$img-padding-desktop: 70px;
+$img-padding-mobile: 10px;
 
 // variables-resize
 $mobile: 590px;
@@ -52,6 +55,7 @@ html, body {
 body {
 	margin: auto !important;
 	max-width: $max-pagewidth;
+	overflow-x: hidden;
 }
 
 h1, p, a, strong {
@@ -63,6 +67,11 @@ h1, p, a, strong {
 	display: block;
 	// grid
 	// box-shadow: inset 0 0 2px #000000;
+
+	@media only screen and (max-width: $mobile) {
+		font-size: $text-size-mobile !important;
+		line-height: $line-height-mobile !important;
+	}
 }
 
 a {
@@ -182,12 +191,22 @@ header {
 
 // custom-bootstrap
 .row {
-	margin: 0 -$img-padding !important;
-	margin-top: -$img-padding !important;
+	margin: 0 -$img-padding-desktop !important;
+	margin-top: -$img-padding-desktop !important;
+
+	@media only screen and (max-width: $mobile) {
+		margin: 0 -$img-padding-mobile !important;
+		margin-top: -$img-padding-mobile !important;
+	}
+
 	.col-xl-4.col-md-6 {
-		padding: $img-padding;
+		padding: $img-padding-desktop !important;
 		display: flex;
-    	align-items: center; //vertical centering
+		align-items: center; //vertical centering
+		
+		@media only screen and (max-width: $mobile) {
+			padding: $img-padding-mobile !important;
+		}
 
 		.container-img {
 			position: relative;
