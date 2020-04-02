@@ -1,8 +1,7 @@
 // typeface
 @font-face {
-	font-family: CiroSans Book;
-	src: url('../assets/fonts/CiroSans-Book.woff') format('woff'),
-		 url('../assets/fonts/CiroSans-Book.woff2') format('woff2');
+	font-family: Titillum Book;
+	src: url('../assets/fonts/TitilliumWeb-Regular.ttf'),
 }
 
 // opentype features
@@ -21,14 +20,17 @@
 }
 
 // variables-font
-$font-stack: CiroSans Book, Arial, sans-serif;
+$font-stack: Titillum Book, Arial, sans-serif;
 $text-size: 23px;
 $text-size-mobile: 18px;
 
 // variables-grid
 $line-height: 26px; //unit of measure_height
 $line-height-mobile: 23px; //unit of measure_height
+
 $max-pagewidth: 1600px;
+$max-textwidth: 899px;
+
 $img-padding-desktop: 70px;
 $img-padding-mobile: 10px;
 
@@ -122,13 +124,24 @@ header {
 
 	.article-title {
 		padding-top: $line-height*2 !important;
+
+		p {
+			max-width: $max-textwidth;
+			margin: auto;
+		}
 	}
 }
 
 .article-text {
+	max-width: $max-textwidth;
+	margin: auto;
 	margin-top: $line-height;
 
 	.link-inline {
+		display: inline-block;
+	}
+
+	a {
 		display: inline-block;
 	}
 }
@@ -251,24 +264,44 @@ header {
 #mc_embed_signup{
 	background:#fff; 
 	clear:left; 
-	font:14px Helvetica,Arial,sans-serif;
+	font-family: $font-stack !important;
+	line-height: $line-height !important;
+	max-width: $max-textwidth;
+	margin: auto;
+	margin-top: $line-height;
 
 	form {
 		padding: 0 !important;
 
 		h2 {
-			font-size: $text-size;
 			font-weight: normal;
 			margin: 0 !important;
 		}
 
 		.mc-field-group {
 			width: 100%;
+		}
 
-			label {
-				font-size: $text-size;
-				margin-bottom: 0;
-			}
+		input {
+			margin-top: 15px;
+			outline: 0;
+			border: 1px solid black;
+			border-radius: 0px;
+			padding: 5px 0 !important;
+		}
+
+		.required.email.mce_inline_error {
+			outline: 0;
+			border: 1px solid black !important;
+			border-radius: 0px;
+			padding: 5px 0 !important;
+		}
+
+		.mce_inline_error {
+			font-size: 18px !important;
+			padding: 0!important;
+			color: red !important;
+
 		}
 	}
 }
