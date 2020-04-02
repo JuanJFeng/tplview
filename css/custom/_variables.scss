@@ -21,7 +21,7 @@
 
 // variables-font
 $font-stack: Titillum Book, Arial, sans-serif;
-$text-size: 23px;
+$text-size: 22px;
 $text-size-mobile: 18px;
 
 // variables-grid
@@ -29,7 +29,7 @@ $line-height: 26px; //unit of measure_height
 $line-height-mobile: 23px; //unit of measure_height
 
 $max-pagewidth: 1600px;
-$max-textwidth: 899px;
+$max-textwidth: 755px;
 
 $img-padding-desktop: 70px;
 $img-padding-mobile: 10px;
@@ -128,6 +128,10 @@ header {
 		p {
 			max-width: $max-textwidth;
 			margin: auto;
+		}
+
+		a {
+			display: inline-block;
 		}
 	}
 }
@@ -276,33 +280,107 @@ header {
 		h2 {
 			font-weight: normal;
 			margin: 0 !important;
+			font-size: $text-size;
+
+			@media only screen and (max-width: $mobile) {
+				font-size: $text-size-mobile !important;
+				line-height: $line-height-mobile !important;
+			}
 		}
 
 		.mc-field-group {
 			width: 100%;
+			padding-bottom: 0 !important;
 		}
 
 		input {
-			margin-top: 15px;
+			margin-top: 10px;
+			font-size: $text-size !important;
 			outline: 0;
-			border: 1px solid black;
+			border: 2px solid black;
 			border-radius: 0px;
 			padding: 5px 0 !important;
+			text-indent: 1% !important;
+
+			@media only screen and (max-width: $mobile) {
+				font-size: $text-size-mobile !important;
+				line-height: $line-height-mobile !important;
+				border: 1px solid black;
+			}
 		}
 
 		.required.email.mce_inline_error {
 			outline: 0;
-			border: 1px solid black !important;
+			border: 2px solid black !important;
 			border-radius: 0px;
 			padding: 5px 0 !important;
+
+			@media only screen and (max-width: $mobile) {
+				border: 1px solid black !important;
+			}
 		}
 
-		.mce_inline_error {
-			font-size: 18px !important;
+		div.mce_inline_error {
+			font-size: $text-size !important;
+			margin-top: 10px !important;
 			padding: 0!important;
 			color: red !important;
 
+			@media only screen and (max-width: $mobile) {
+				font-size: $text-size-mobile !important;
+				line-height: $line-height-mobile !important;
+			}
 		}
+
+		.clear {
+			margin: 0 !important;
+			padding: 0 !important;
+
+			.response {
+				margin: 0 !important;
+				padding: 0 !important;
+				font-size: $text-size !important;
+				font-weight: normal !important;
+				width: 100%;
+
+				@media only screen and (max-width: $mobile) {
+					font-size: $text-size-mobile !important;
+					line-height: $line-height-mobile !important;
+				}
+			}
+			#mce-success-response {
+				color: $link-color-1 !important;
+			}
+		}
+
+		.button {
+			color: $text-color;
+			border-radius: 0px;
+			background-color: white;
+			margin: 0;
+			border-bottom: 2px solid black;
+			transition: none;
+
+			@media only screen and (max-width: $mobile) {
+				font-size: $text-size-mobile !important;
+				line-height: $line-height-mobile !important;
+				border-bottom: 1px solid black;
+				height: 29px;
+			}
+			
+		}
+		.button:hover {
+			background-color: white;
+			border-bottom: none;
+		}
+	}
+}
+
+.article-title.about {
+	padding-top: 122px !important;
+
+	@media only screen and (max-width: $mobile) {
+		padding-top: $line-height*2 !important;
 	}
 }
 
