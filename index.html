@@ -4,25 +4,28 @@ layout: default
 
 <div class="container-article">
     <div class="article-title">
-    
+
     </div>
 
     <div class="row">
-        {% for image in site.static_files %}
-            {% if image.path contains 'images/view' %}
-                <div class="col-xl-4 col-md-6">
 
-                    <div class="container-img">
-                        <img src="{{ site.baseurl }}{{ image.path }}" alt="image" />
-                        <div class="overlay">
-                            <div class="text">Hello World</div>
+        {% for member in site.data.members %}
+            <div class="col-xl-4 col-md-6">
+                <div class="container-img">
+                    <img src="{{ site.baseurl }}{{ member.img-link }}" alt="image" />
+
+                    <div class="overlay">
+                        <div class="text">
+                            <a href="https:{{ member.link }}" target="_blank">
+                            {{ member.name }}
+                            </a>
                         </div>
                     </div>
-
                 </div>
-            {% endif %}
+            </div>
         {% endfor %}
-    </div>     
+
+    </div>  
 </div>
 
 
