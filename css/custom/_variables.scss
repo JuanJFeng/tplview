@@ -29,7 +29,7 @@ $line-height: 26px; //unit of measure_height
 $line-height-mobile: 23px; //unit of measure_height
 
 $max-pagewidth: 1600px;
-$max-textwidth: 755px;
+$max-textwidth: 710px;
 
 $img-padding-desktop: 70px;
 $img-padding-mobile: 10px;
@@ -256,6 +256,10 @@ header {
 			-ms-transform: translate(-50%, -50%);
 			transform: translate(-50%, -50%);
 			text-align: center;
+
+			a {
+				color: #F5F5F5 !important;
+			}
 		}
 
 		img {
@@ -272,7 +276,7 @@ header {
 	line-height: $line-height !important;
 	max-width: $max-textwidth;
 	margin: auto;
-	margin-top: $line-height;
+	margin-top: $line-height*2;
 
 	form {
 		padding: 0 !important;
@@ -377,12 +381,15 @@ header {
 }
 
 .article-title.about {
-	padding-top: 122px !important;
+	padding-top: 100px !important;
 
 	@media only screen and (max-width: $mobile) {
 		padding-top: $line-height*2 !important;
 	}
 }
 
+.article-text.about {
+	margin-top: $line-height*2;
+}
 
 
